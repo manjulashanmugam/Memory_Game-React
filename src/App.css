@@ -1,0 +1,200 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Particle Effect */
+body::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 2px, transparent 3px);
+  background-size: 60px 60px;
+  animation: moveParticles 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveParticles {
+  from { transform: translateY(0); }
+  to { transform: translateY(-200px); }
+}
+
+/* Container */
+.container {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(25px);
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+  width: 450px;
+  transition: 0.4s ease;
+  box-shadow: 0 0 30px #ff758c;
+  animation: neonPulse 2s infinite alternate;
+}
+
+@keyframes neonPulse {
+  from { box-shadow: 0 0 15px #ff758c; }
+  to { box-shadow: 0 0 40px #667eea; }
+}
+
+.container:hover {
+  transform: rotateX(6deg) rotateY(6deg) scale(1.05);
+}
+
+/* Numbers */
+.numbers span {
+  display: inline-block;
+  margin: 10px;
+  font-size: 26px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.numbers span:hover {
+  transform: scale(1.2);
+}
+
+/* Buttons */
+.buttons button {
+  padding: 12px 25px;
+  margin: 8px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.buttons button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.buttons button:active {
+  transform: scale(0.95);
+}
+
+/* Ripple */
+.buttons button::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+}
+
+.buttons button:active::after {
+  transform: translate(-50%, -50%) scale(2);
+  opacity: 1;
+  transition: 0s;
+}
+
+.message {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buttons button {
+    width: 100%;
+  }
+}
+.submit {
+  margin-top: 15px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit:hover {
+  transform: scale(1.1);
+}
+
+.start-btn {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3); /* neon gradient */
+  color: white;
+  border: none;
+  padding: 15px 45px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 20px rgba(255, 118, 140, 0.5), 0 0 30px rgba(255, 118, 140, 0.3);
+  position: relative;
+  overflow: hidden;
+  margin-top: 25px;
+}
+
+/* Hover glow effect */
+.start-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(255, 118, 140, 0.7), 0 0 50px rgba(255, 118, 140, 0.5);
+}
+
+/* Click effect (ripple) */
+.start-btn::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+}
+
+.start-btn:active::after {
+  transform: translate(-50%, -50%) scale(2);
+  opacity: 1;
+  transition: 0s;
+}
