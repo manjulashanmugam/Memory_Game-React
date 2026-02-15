@@ -4,7 +4,7 @@ A fun **React-based Memory Game** where players memorize a sequence of numbers a
 
 ## 🖥️ Demo
 
-You can play the game  (replace `https://memory-game-react-one-chi.vercel.app/` with your live Vercel link).
+You can play the game  ('https://memory-game-react-one-chi.vercel.app/').
 you can access the files ('https://github.com/manjulashanmugam/Memory_Game-React.git')
 
 ## ⚡ Features
